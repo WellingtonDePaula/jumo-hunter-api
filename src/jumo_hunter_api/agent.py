@@ -8,9 +8,10 @@ blp = Blueprint(
     description="Route for agent operations"
     )
 
-@blp.route("/")
-class Agent(MethodView):
-    
-    blp.response(200)
-    def get(self):
-        return "nice"
+@blp.route("/step")
+class Step(MethodView):
+    pass
+
+@blp.route("/reset")
+class Step(MethodView):
+    pass

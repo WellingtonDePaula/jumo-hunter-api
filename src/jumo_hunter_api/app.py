@@ -1,6 +1,8 @@
 from flask import Flask
 from flask_smorest import Api
+from qLearningAgent import QLearningAgent
 
+agent = QLearningAgent()
 
 app = Flask(__name__)
 

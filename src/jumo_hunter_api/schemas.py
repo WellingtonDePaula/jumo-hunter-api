@@ -7,3 +7,6 @@ class StepSchema(Schema):
                               )
     reward = fields.Float(required=True)
     done = fields.Boolean(required=True)
+
+class ActionSchema(Schema):
+    action = fields.Integer(required=True)

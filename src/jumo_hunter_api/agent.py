@@ -1,7 +1,7 @@
 from flask.views import MethodView
 from flask_smorest import Blueprint
 from app import agent
-from .schemas import StepSchema, ActionSchema
+from schemas import StepSchema, ActionSchema
 
 blp = Blueprint(
     "agent",
@@ -19,6 +19,8 @@ class Step(MethodView):
         dx, dy = step_data["observation"]
         next_state = agent.discretize(dx, dy)
 
+        print(agent.q_table)
+        
         # a reward/done que chegaram agora são resultado da ÚLTIMA ação, não da próxima
         if agent.last_state is not None:
             agent.learn(
